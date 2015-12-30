@@ -1,0 +1,18 @@
+<html>
+<head>
+    {{ wp_head|raw }}
+</head>
+
+<body>
+
+{% for post in posts %}
+    <section>
+        <h1>{{ post.get_title() }}</h1>
+        {{ post.get_content()|raw }}
+        <a href="{{ post.get_permalink() }}">lees meer</a>
+    </section>
+{% endfor %}
+
+{{ wp_footer|raw }}
+</body>
+</html>
